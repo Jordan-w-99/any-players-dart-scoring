@@ -1,0 +1,38 @@
+.spinnerContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.spinnerBase {
+    width: 5rem;
+    height: 5rem;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: x-large;
+}
+
+.spinnerButton {
+    transition: background-color 75ms;
+}
+
+.spinnerButton:active {
+    background-color: rgb(192, 192, 192);
+}
+
+.spinnerButtonL {
+    border-top-left-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
+}
+
+.spinnerButtonR {
+    border-top-right-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+}
+
+.spinnerInput {}
