@@ -63,12 +63,12 @@ export const PlayScreen = ({ menuClicked }: PlayScreenProps): React.JSX.Element 
 
                         </div>
                         <div className={styles.numpadContainer}>
-                            <Numpad maxVal={180} cofirmPressed={(score) => { updatePlayerScore(playerIdx, score) }} />
+                            <Numpad maxVal={180} cofirmPressed={(score) => { updatePlayerScore(playerIdx, score); changePlayer(true) }} />
                         </div>
-                        <div className={styles.lowerButtonsContainer}>
+                        {/* <div className={styles.lowerButtonsContainer}>
                             <button onClick={() => changePlayer(false)}>Prev Player</button>
                             <button onClick={() => changePlayer(true)}>Next Player</button>
-                        </div>
+                        </div> */}
                     </div>
                 ))}
             </div>
