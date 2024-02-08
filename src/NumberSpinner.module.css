@@ -35,4 +35,8 @@
     border-bottom-right-radius: 0.8rem;
 }
 
-.spinnerInput {}
+.spinnerInput::-webkit-outer-spin-button,
+.spinnerInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

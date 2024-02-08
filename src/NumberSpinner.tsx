@@ -44,7 +44,7 @@ export const NumberSpinner = ({ min, max, defaultNumber, onChange = () => { } }:
             <input
                 type="number"
                 value={currentNumber}
-                className={styles.spinnerBase}
+                className={`${styles.spinnerBase} ${styles.spinnerInput}`}
             />
             <button
                 onClick={increment}

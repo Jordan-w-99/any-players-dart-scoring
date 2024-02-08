@@ -1,4 +1,4 @@
-import { createContext, useRef, useState } from 'react'
+import { createContext, useEffect, useRef, useState } from 'react'
 import './App.css'
 import { PlayScreen } from './PlayScreen'
 import { MenuScreen } from './MenuScreen'
@@ -37,6 +37,10 @@ const App = () => {
   const toMenuScreen = () => {
     menuSectionRef.current?.scrollIntoView(scrollIntoViewOptions)
   }
+
+  useEffect(() => {
+    toPlayScreen()
+  }, [])
 
   return (
     <AppContext.Provider value={{ playerCount, updatePlayerCount }}>

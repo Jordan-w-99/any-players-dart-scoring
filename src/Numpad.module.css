@@ -1,0 +1,41 @@
+.numKey {
+    background-color: gray;
+    color: whitesmoke;
+    width: calc(100% / 3);
+    aspect-ratio: 1.5;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    border: 0;
+    transition: background-color 75ms, color 75ms;
+}
+
+.numKey:active {
+    background-color: rgb(102, 102, 102);
+    color: rgb(207, 206, 206);
+}
+
+.numpadContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.numRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.valueDisplayContainer {
+    width: 100%;
+    text-align: center;
+}
+
+.valueDisplay {
+    font-size: xx-large;
+    color: white;
+}
