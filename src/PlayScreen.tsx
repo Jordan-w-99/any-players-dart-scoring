@@ -68,8 +68,8 @@ export const PlayScreen = ({ menuClicked }: PlayScreenProps): React.JSX.Element 
                             gap: 10
                         }}
                     >
-                        <FaArrowUp size={'1rem'} />
-                        <div style={{ fontSize: '1rem', lineHeight: 0.8 }}>Menu</div>
+                        <FaArrowUp size={'0.75rem'} />
+                        <div style={{ fontSize: '0.75rem', lineHeight: 0.8 }}>Menu</div>
                     </button>
                 </div>
                 <div>
@@ -89,8 +89,8 @@ export const PlayScreen = ({ menuClicked }: PlayScreenProps): React.JSX.Element 
                             gap: 10
                         }}
                     >
-                        <div style={{ fontSize: '1rem', lineHeight: 0.8 }}>Reset</div>
-                        <FaUndo size={'1rem'} />
+                        <div style={{ fontSize: '0.75rem', lineHeight: 0.8 }}>Reset</div>
+                        <FaUndo size={'0.75rem'} />
                     </button>
                 </div>
             </div>
