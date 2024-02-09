@@ -30,13 +30,13 @@ export const MenuScreen = ({ playClicked }: MenuScreenProps): React.JSX.Element 
                 justifyContent: 'space-between'
             }}
         >
-            <h1 style={{ fontSize: '4rem', textAlign: 'center', margin: '2rem' }}>Darts Scoring</h1>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 20, width: '100%', alignItems: 'center' }}>
+            <h1 style={{ fontSize: '4rem', textAlign: 'center', margin: '0' }}>Darts Scoring</h1>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10, width: '100%', alignItems: 'center' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5 }} >
-                    <label style={{ fontSize: '2rem' }}>Players</label>
+                    <label style={{ fontSize: '1.5rem' }}>Players</label>
                     <NumberSpinner min={1} max={6} defaultNumber={playerCount} onChange={updatePlayerCount} />
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
                     {players.map((player, playerIdx) => <input className={styles.nameInput} value={player.name} onChange={(e) => updatePlayerName(playerIdx, e.target.value)} />)}
                 </div>
             </div>
