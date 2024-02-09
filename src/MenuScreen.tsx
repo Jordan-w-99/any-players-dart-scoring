@@ -36,7 +36,7 @@ export const MenuScreen = ({ playClicked }: MenuScreenProps): React.JSX.Element 
                     <label style={{ fontSize: '1.5rem' }}>Players</label>
                     <NumberSpinner min={1} max={6} defaultNumber={playerCount} onChange={updatePlayerCount} />
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                     {players.map((player, playerIdx) => <input className={styles.nameInput} value={player.name} onChange={(e) => updatePlayerName(playerIdx, e.target.value)} />)}
                 </div>
             </div>
