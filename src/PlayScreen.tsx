@@ -1,7 +1,7 @@
 import { useCallback, useContext, useEffect, useRef, useState } from 'react'
 import styles from './PlayScreen.module.css'
 import { AppContext } from './App'
-import { Player } from './Player'
+import { calculatePlayerAvg } from './Player'
 import { Numpad } from './Numpad'
 import { FaArrowUp, FaUndo } from 'react-icons/fa'
 
@@ -10,33 +10,29 @@ export interface PlayScreenProps {
 }
 
 export const PlayScreen = ({ menuClicked }: PlayScreenProps): React.JSX.Element => {
-    const { playerCount } = useContext(AppContext)
-
-    const createNewPlayers = (count: number): Player[] => {
-        const players: Player[] = []
-
-        for (let i = 0; i < count; i++) {
-            players.push({
-                name: `Player ${i + 1}`,
-                score: 501
-            })
-        }
-
-        return players
-    }
+    const { playerCount, players, updatePlayers } = useContext(AppContext)
 
     const [currentPlayer, setCurrentPlayer] = useState(0)
-    const [players, setPlayers] = useState<Player[]>(createNewPlayers(playerCount))
+
     const playerDisplayRefs = useRef<(HTMLElement | null)[]>([])
 
-    const resetGame = useCallback(() => {
-        setPlayers(createNewPlayers(playerCount))
+    const resetPlayers = () => {
+        const updatedPlayers = players.map(player => ({
+            ...player,
+            score: 501,
+            scoreHistory: []
+        }))
+        updatePlayers(updatedPlayers)
+    }
+
+    const resetGame = () => {
+        resetPlayers()
         setCurrentPlayer(0)
-    }, [setPlayers, setCurrentPlayer, playerCount])
+    }
 
     useEffect(() => {
         resetGame()
-    }, [resetGame])
+    }, [])
 
     const changePlayer = (next: boolean) => {
         const updatedCurrentPlayer = (currentPlayer + (next ? 1 : -1)) % playerCount
@@ -48,7 +44,9 @@ export const PlayScreen = ({ menuClicked }: PlayScreenProps): React.JSX.Element 
     const updatePlayerScore = (playerIdx: number, score: number) => {
         const updatedPlayers = [...players]
         updatedPlayers[playerIdx].score = updatedPlayers[playerIdx].score - score
-        setPlayers(updatedPlayers)
+        updatedPlayers[playerIdx].scoreHistory.push(score)
+
+        updatePlayers(updatedPlayers)
     }
 
     return (
@@ -114,15 +112,15 @@ export const PlayScreen = ({ menuClicked }: PlayScreenProps): React.JSX.Element 
                         <div className={styles.statsContainer}>
                             <div className={styles.statDisplay}>
                                 <div className={styles.statTitle}>Last</div>
-                                <div className={styles.statValue}>180</div>
+                                <div className={styles.statValue}>{player.scoreHistory.length > 0 ? player.scoreHistory.slice(-1) : '-'}</div>
                             </div>
                             <div className={styles.statDisplay}>
                                 <div className={styles.statTitle}>Avg</div>
-                                <div className={styles.statValue}>180</div>
+                                <div className={styles.statValue}>{calculatePlayerAvg(player.scoreHistory).toFixed(2)}</div>
                             </div>
                             <div className={styles.statDisplay}>
                                 <div className={styles.statTitle}>Throws</div>
-                                <div className={styles.statValue}>180</div>
+                                <div className={styles.statValue}>{player.scoreHistory.length}</div>
                             </div>
                         </div>
                         <div className={styles.numpadContainer}>

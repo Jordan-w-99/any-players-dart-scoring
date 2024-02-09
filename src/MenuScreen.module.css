@@ -1,0 +1,14 @@
+.nameInput {
+    font-size: 1.5rem;
+    text-align: center;
+    max-width: 15rem;
+    aspect-ratio: 6;
+    border-radius: 0.75rem;
+    border: 0;
+    background-color: rgb(228, 228, 228);
+}
+
+.nameInput:focus {
+    outline: 0;
+    box-shadow: inset 0px 0px 3px rgb(66, 66, 66);
+}
