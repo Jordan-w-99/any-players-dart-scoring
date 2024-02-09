@@ -30,7 +30,7 @@ export const MenuScreen = ({ playClicked }: MenuScreenProps): React.JSX.Element 
                 justifyContent: 'space-between'
             }}
         >
-            <h1 style={{ fontSize: '4rem', textAlign: 'center', margin: '0' }}>Darts Scoring</h1>
+            <h1 style={{ fontSize: '4rem', textAlign: 'center', margin: '0', lineHeight: 0.8 }}>Darts Scoring</h1>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10, width: '100%', alignItems: 'center' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5 }} >
                     <label style={{ fontSize: '1.5rem' }}>Players</label>
