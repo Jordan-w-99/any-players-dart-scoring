@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import styles from './PlayScreen.module.css'
 import { AppContext } from './App'
 import { calculatePlayerAvg } from './Player'
