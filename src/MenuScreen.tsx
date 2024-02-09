@@ -26,7 +26,7 @@ export const MenuScreen = ({ playClicked }: MenuScreenProps): React.JSX.Element 
             <h1 style={{ fontSize: '4rem', textAlign: 'center' }}>Darts Scoring</h1>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5 }} >
                 <label style={{ fontSize: '2rem' }}>Players</label>
-                <NumberSpinner min={1} max={10} defaultNumber={playerCount} onChange={updatePlayerCount} />
+                <NumberSpinner min={1} max={6} defaultNumber={playerCount} onChange={updatePlayerCount} />
             </div>
             <button
                 onClick={playClicked}

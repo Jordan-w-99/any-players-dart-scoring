@@ -31,11 +31,18 @@
 }
 
 .valueDisplayContainer {
+    margin-bottom: 20px;
+    min-height: 32px;
     width: 100%;
     text-align: center;
 }
 
 .valueDisplay {
     font-size: xx-large;
+    line-height: 1;
     color: white;
+}
+
+.valuePlaceholder {
+    color: gray;
 }

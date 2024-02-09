@@ -1,16 +1,44 @@
 .container {
-    padding: 2rem;
+    padding: 1rem;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    gap: 10px;
+}
+
+.allPlayersOverview {
+    display: flex;
+    gap: 10px;
+    border-radius: 1.5rem;
+    padding: 0.75rem;
+    background-color: #303030;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.playerOverview {
+    background-color: rgb(102, 102, 102);
+    color: rgb(207, 206, 206);
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex: 1 1 calc(100% / 3 - 10px);
+}
+
+.currentPlayerOverview {
+    background-color: rgb(148, 148, 148);
+    color: rgb(224, 224, 224);
 }
 
 .playerCarousel {
     display: flex;
     flex-grow: 1;
-    color: black;
     overflow-x: hidden;
     gap: 2rem;
 }
@@ -23,16 +51,64 @@
     height: 100%;
     background-color: #303030;
     border-radius: 1.5rem;
-    padding: 0.75rem;
+    padding: 1.5rem;
     box-sizing: border-box;
+    gap: 20px;
 }
 
-.playerMain {
+.playerMainInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.15rem solid rgb(102, 102, 102);
+    border-radius: 0.75rem;
+    padding: 1rem;
+}
+
+.playerName {
+    color: #b4b4b4;
+    line-height: 0.9;
+    font-size: 2.5rem;
+}
+
+.playerScore {
+    line-height: 0.9;
+    font-weight: bold;
+    font-size: 6.8rem;
+    margin: 1rem;
+}
+
+.statsContainer {
     flex-grow: 1;
+    display: flex;
+    gap: 10px;
+}
+
+.statDisplay {
+    width: 100%;
+    border: 0.15rem solid rgb(102, 102, 102);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.statTitle {
+    font-size: 1.25rem;
+    color: #b4b4b4;
+    line-height: 0.9;
+}
+
+.statValue {
+    font-size: 2rem;
+    line-height: 0.9;
+    font-weight: bold;
 }
 
 .numpadContainer {
-    padding: 0 1rem;
+    /* padding: 1rem; */
 }
 
 .lowerButtonsContainer {

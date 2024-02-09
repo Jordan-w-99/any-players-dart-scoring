@@ -58,7 +58,7 @@ export const Numpad = ({ maxVal, cofirmPressed }: NumpadProps) => {
         <div>
             <div className={styles.valueDisplayContainer}>
                 <div className={styles.valueDisplay}>
-                    {value}
+                    {value || <div className={styles.valuePlaceholder}>-</div>}
                 </div>
             </div>
             <div className={styles.numpadContainer}>
