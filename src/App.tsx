@@ -97,7 +97,7 @@ const App = () => {
       <div
         style={{
           overflow: 'hidden',
-          height: '100dvh',
+          height: '100vh',
           maxHeight: '100vh',
           maxWidth: 480,
           margin: 'auto'
