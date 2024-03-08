@@ -73,6 +73,12 @@
     font-size: 2.5rem;
 }
 
+.checkout {
+    color: #b4b4b4;
+    /* line-height: 0.9; */
+    font-size: 1.5rem;
+}
+
 .playerScore {
     line-height: 0.9;
     font-weight: bold;

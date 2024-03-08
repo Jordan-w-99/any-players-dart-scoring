@@ -4,6 +4,7 @@ import { AppContext } from './App'
 import { calculatePlayerAvg } from './Player'
 import { Numpad } from './Numpad'
 import { FaArrowUp, FaUndo } from 'react-icons/fa'
+import { checkouts } from './Checkouts'
 
 export interface PlayScreenProps {
     menuClicked: () => void
@@ -108,6 +109,9 @@ export const PlayScreen = ({ menuClicked }: PlayScreenProps): React.JSX.Element 
                         <div className={styles.playerMainInfo}>
                             <div className={styles.playerName}>{player.name}</div>
                             <div className={styles.playerScore}>{player.score}</div>
+                            {checkouts[player.score as keyof object] != null &&
+                                <div className={styles.checkout}>{checkouts[player.score as keyof object]}</div>
+                            }
                         </div>
                         <div className={styles.statsContainer}>
                             <div className={styles.statDisplay}>
